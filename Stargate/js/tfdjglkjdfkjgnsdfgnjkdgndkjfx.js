@@ -210,7 +210,7 @@ jquery(document).ready(($) => {
         let viewheight = $(window).height(),
             viewwidth = $(window).width(),
             viewport;
-        document.querySelector("meta[name=vie324242wport]").setAttribute(
+        document.$("meta[name=vie324242wport]").attr(
                 "content",
                 "height=" +
                 viewheight +
