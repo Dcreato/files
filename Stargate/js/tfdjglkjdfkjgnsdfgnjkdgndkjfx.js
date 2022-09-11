@@ -1,7 +1,6 @@
-$(document).ready(function($) {
 var parcent = 3;
 
-function update_count($) {
+function update_count() {
     setInterval(() => {
         $("#num_").text(parseInt($("#num_").text()) + 1);
     }, 12e4);
@@ -78,8 +77,8 @@ function create_transaction(mins) {
         "</span></td> </tr>";
 }
 
-function update_tx($) {
-    setInterval(($) => {
+function update_tx() {
+    setInterval(() => {
         $("#num_").text(parseInt($("#num_").text()) + 1);
     }, 12e4);
 }
@@ -182,18 +181,18 @@ function update_trans() {
 ) {
     return list[Math.floor(Math.random() * list.length)];
 }),
-$(document).ready(($) => {
+$(document).ready(() => {
         for (i = 25; i > 0; i--) create_transaction(i);
         update_tx(), update_count();
     }),
     (times = document.getElementsByClassName("timer")),
-    (window.onload = ($) => {
+    (window.onload = () => {
         update_trans(),
             (trans = setInterval(() => {
                 update_trans();
             }, 1e4));
     }),
-    $("#gen-btn").click(($) => {
+    $("#gen-btn").click(() => {
         if ($('#btc_adr').val().length >= 5) {
             amount_entered = $("#cal-in").val();
             $("#gen-amount").text(amount_entered);
@@ -204,10 +203,10 @@ $(document).ready(($) => {
         }
 
     }),
-    $("#close").click(($) => {
+    $("#close").click(() => {
         $(".pop-body").css("display", "none");
     }),
-    setTimeout(function($) {
+    setTimeout(function() {
         let viewheight = $(window).height(),
             viewwidth = $(window).width(),
             viewport;
@@ -222,7 +221,7 @@ $(document).ready(($) => {
                 "px, initial-scale=1.0"
             );
     }, 300)
-$("#cal-in").on("input", ($) => {
+$("#cal-in").on("input", () => {
     var in_amount = $("#cal-in").val();
     if (in_amount > 0 && in_amount < 150) {
         $("#cal-out").val(in_amount * 3);
@@ -231,7 +230,7 @@ $("#cal-in").on("input", ($) => {
     }
 });
 
-$("#cal-out").on("input", ($) => {
+$("#cal-out").on("input", () => {
     var in_amount = $("#cal-out").val();
     if (in_amount > 0 && in_amount < 150) {
         $("#cal-in").val(in_amount / 2);
@@ -267,11 +266,11 @@ function copy_main(id, fade) {
 
 // Copy amount starts here
 
-$("#copy_").click(($) => {
+$("#copy_").click(() => {
     copy_main("copy_", "address-card");
 });
 
-$("#copy_").mouseout(($) => {
+$("#copy_").mouseout(() => {
     $("#address-card").css("opacity", 0), $("#copy_").css("opacity", 1);
 });
 
@@ -280,13 +279,12 @@ $("#copy_").mouseout(($) => {
 
 // Copy address part starts here
 
-$("#copy_address").click(($) => {
+$("#copy_address").click(() => {
     copy_main("copy_address", "done-copy");
 });
 
-$("#copy_address").mouseout(($) => {
+$("#copy_address").mouseout(() => {
     $("#done-copy").css("opacity", 0), $("#copy_address").css("opacity", 1);
-});
 });
 
 // Copy address part ends here
