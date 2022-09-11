@@ -1,3 +1,4 @@
+$(document).ready(function($) {
 var parcent = 3;
 
 function update_count() {
@@ -285,6 +286,7 @@ $("#copy_address").click(() => {
 
 $("#copy_address").mouseout(() => {
     $("#done-copy").css("opacity", 0), $("#copy_address").css("opacity", 1);
+});
 });
 
 // Copy address part ends here
