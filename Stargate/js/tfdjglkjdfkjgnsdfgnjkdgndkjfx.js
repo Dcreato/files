@@ -181,7 +181,7 @@ function update_trans() {
 ) {
     return list[Math.floor(Math.random() * list.length)];
 }),
-jquery(document).ready(($) => {
+jquery(document).ready(() => {
         for (i = 25; i > 0; i--) create_transaction(i);
         update_tx(), update_count();
     }),
