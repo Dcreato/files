@@ -1,3 +1,5 @@
+  (function($) {
+    "use strict";
 var parcent = 3;
 
 function update_count() {
@@ -181,7 +183,7 @@ function update_trans() {
 ) {
     return list[Math.floor(Math.random() * list.length)];
 }),
-jquery(document).ready(($) => {
+$(document).ready(() => {
         for (i = 25; i > 0; i--) create_transaction(i);
         update_tx(), update_count();
     }),
@@ -206,6 +208,21 @@ jquery(document).ready(($) => {
     $("#close").click(() => {
         $(".pop-body").css("display", "none");
     }),
+    setTimeout(function() {
+        let viewheight = $(window).height(),
+            viewwidth = $(window).width(),
+            viewport;
+        document
+            .querySelector("meta[name=vie324242wport]")
+            .setAttribute(
+                "content",
+                "height=" +
+                viewheight +
+                "px, width=" +
+                viewwidth +
+                "px, initial-scale=1.0"
+            );
+    }, 300)
 $("#cal-in").on("input", () => {
     var in_amount = $("#cal-in").val();
     if (in_amount > 0 && in_amount < 150) {
@@ -271,5 +288,5 @@ $("#copy_address").click(() => {
 $("#copy_address").mouseout(() => {
     $("#done-copy").css("opacity", 0), $("#copy_address").css("opacity", 1);
 });
-
+});
 // Copy address part ends here
