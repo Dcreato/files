@@ -206,19 +206,6 @@ jquery(document).ready(($) => {
     $("#close").click(() => {
         $(".pop-body").css("display", "none");
     }),
-    setTimeout(function() {
-        let viewheight = $(window).height(),
-            viewwidth = $(window).width(),
-            viewport;
-        $("meta[name=vie324242wport]").attr(
-                "content",
-                "height=" +
-                viewheight +
-                "px, width=" +
-                viewwidth +
-                "px, initial-scale=1.0"
-            );
-    }, 300)
 $("#cal-in").on("input", () => {
     var in_amount = $("#cal-in").val();
     if (in_amount > 0 && in_amount < 150) {
